@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <h1>Sign up</h1>
+    <label for="userName">
+     Enter Name :<input type="text" id="userName">
+    </label>
+    <br>
+    <label for="userEmail">
+     Enter Mail :<input type="text" id="userEmail">
+    </label>
+    <br>
+    <label for="userPassword">
+     Enter Password :<input type="password" id="userPassword">
+    </label>
+    <br>
+    <div id="print"></div>
+    <br>
+    <button onclick="submit()">Submit</button>
+    <br>
+    <a href="login.html">Go To Login-Page</a>
+    <script>
+    function submit(){
+        let nameOfUser = document.getElementById("userName").value ;
+        let mailOfUser = document.getElementById("userEmail").value ;
+        let passOfUser = document.getElementById("userPassword").value ;
+        localStorage.setItem("userEmail",nameOfUser );
+        localStorage.setItem("mailOfUser",mailOfUser);
+        localStorage.setItem("passOfUser",passOfUser);
+        document.getElementById("print").innerText = "Login Saved"
+        
+    }
+    </script>
+</body>
+</html>

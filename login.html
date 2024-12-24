@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login-Page</h1>
+    <label for="nameOfUser">
+        Enter Name : <input type="text" id="nameOfUser">
+    </label>
+    <br>
+    <label for="emailOfUser">
+        Enter Name : <input type="text" id="emailOfUser">
+    </label>
+    <br>
+    <label for="passOfUser">
+        Enter Name : <input type="password" id="passOfUser">
+    </label>
+    <br>
+    <div id="printx"></div>
+    <button onclick="check()">Login</button>
+    <script>
+    function check(){
+        let userName = document.getElementById("nameOfUser").value ; 
+        let nameStorage = localStorage.getItem("userName");
+        let userEmail = document.getElementById("emailOfUser").value;
+        let mailStorage = localStorage.getItem("userEmail");
+        let userPassword = document.getElementById("passOfUser").value;
+        let passwordStorage = localStorage.getItem("userPassword");
+        
+        if(userEmail == mailStorage){
+                if(userPassword == passwordStorage){
+                    document.getElementById("printx").innerText = "Login Successful"
+                }else{
+                    document.getElementById("printx").innerText = "Incorrect Password"
+                }
+            }else{
+                document.getElementById("printx").innerText = "Incorrect Email"
+            }
+        }
+    
+
+    </script>
+</body>
+</html>
